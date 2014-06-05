@@ -1,3 +1,10 @@
+// Body styles
+body > .vertical(#333; #000);
+body > .horizontal(#333; #000);
+body > .radial(#333; #000);
+
+// Navigation
+
 .samdhya-nav {
   @extend .nav;
   @extend .navbar-default;

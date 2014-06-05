@@ -9,7 +9,6 @@ nav.samdhya-nav role='navigation'
       a.navbar-brand href='/' Samdhya
     #nav-main
       ul
-        li= link_to 'link', '#'
-        li= link_to 'link', '#'
-        li= link_to 'link', '#'
-        li= link_to 'link', '#'
+        - Page.where(nav: true).each do |page|
+          li= link_to page.title, page
+        end
