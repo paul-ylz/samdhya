@@ -1,0 +1,17 @@
+.samdhya-nav {
+  @extend .nav;
+  @extend .navbar-default;
+}
+
+.nav-mobile-display {
+  @extend .navbar-header;
+}
+
+#nav-main {
+  @extend .collapse;
+  @extend .navbar-collapse;
+  ul {
+    @extend .nav;
+    @extend .navbar-nav;
+  }
+}
