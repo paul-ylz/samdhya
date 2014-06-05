@@ -45,3 +45,5 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'capybara_minitest_spec'
 end
+
+gem 'bootstrap-sass'
