@@ -7,8 +7,9 @@ namespace :generate do
     puts 'Generating navigation pages'
     Page.destroy_all
     titles = %w(Home Services Stars Flowers Food)
+    content = ''
     titles.each do |title|
-      content = Lorem.paragraphs(3).join('<br /><br />')
+      Lorem.paragraphs(30).each { |para| content += para.gsub(/\A/, '<p>').gsub(/\z/, '</p>')}
       Page.create!(nav: true, title: title, content: content)
     end
   end

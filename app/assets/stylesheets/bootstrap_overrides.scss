@@ -1,8 +1,23 @@
 // Body styles
-body > .vertical(#333; #000);
-body > .horizontal(#333; #000);
-body > .radial(#333; #000);
+html, body {
+  margin: 0;
+  height: 100%;
+}
 
+$gradientStart: rgba(250, 241, 226, 0.6);
+$gradientMid: rgba(104, 89, 111, 0.8);
+$gradientEnd: rgba(28, 45, 75, 0.9);
+
+
+body {
+  background: radial-gradient(
+    at top left,
+    $gradientStart 10%,
+    $gradientMid 40%,
+    $gradientEnd 85%
+    );
+  background-attachment: fixed;
+}
 // Navigation
 
 .samdhya-nav {
