@@ -48,3 +48,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'faker'
+gem 'simple_form'

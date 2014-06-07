@@ -1,2 +1,5 @@
-h1= @page.title
-= simple_format @page.content
+.page
+  .sidebar
+    h1.page-title= @page.title
+  .content
+    = simple_format @page.content

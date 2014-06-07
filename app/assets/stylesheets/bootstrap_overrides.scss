@@ -1,23 +1,75 @@
+// Custom Variables
+$screen-md-min: 992px;
+
+// Colors
+
+$gradientStart: rgba(250, 241, 226, 0.6);
+$gradientMid: rgba(104, 89, 111, 0.8);
+$gradientEnd: rgba(28, 45, 75, 0.9);
+$samdhyaWhite: rgb(242, 236, 217);
+$samdhyaPurple: rgb(99, 72, 122);
+
+// Media queries
+
+@media (min-width: $screen-md-min) {
+  body {
+    background: radial-gradient(
+      at top left,
+      $gradientStart 7%,
+      $gradientMid 40%,
+      $gradientEnd 85%
+      );
+  }
+  .page-title {
+    position: fixed;
+    left: 30px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  body {
+    background: radial-gradient(
+      at top left,
+      $gradientMid 40%,
+      $gradientEnd 85%
+      );
+  }
+}
+// Pages
+
+.page {
+  @extend .row;
+  .sidebar {
+  @extend .col-md-4;
+}
+  .content {
+    @extend .col-md-8;
+    @extend .col-md-offset-4;
+  }
+  .page-title {
+    color: $samdhyaWhite;
+  }
+}
+
+
+// Layout
+
+.content {
+  @extend .container-fluid;
+}
+
 // Body styles
+
 html, body {
   margin: 0;
   height: 100%;
 }
 
-$gradientStart: rgba(250, 241, 226, 0.6);
-$gradientMid: rgba(104, 89, 111, 0.8);
-$gradientEnd: rgba(28, 45, 75, 0.9);
-
-
 body {
-  background: radial-gradient(
-    at top left,
-    $gradientStart 10%,
-    $gradientMid 40%,
-    $gradientEnd 85%
-    );
   background-attachment: fixed;
 }
+
 // Navigation
 
 .samdhya-nav {
