@@ -1,3 +1,12 @@
+// Mixins
+
+@mixin background-gradient {
+  background: -webkit-radial-gradient(at -8% -8%, $gradientWhite 1%, $gradientPurple 30%, $gradientBlue 85%); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(at -8% -8%, $gradientWhite 1%, $gradientPurple 30%, $gradientBlue 85%); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(at -8% -8%, $gradientWhite 1%, $gradientPurple 30%, $gradientBlue 85%); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(at -8% -8%, $gradientWhite 1%, $gradientPurple 30%, $gradientBlue 85%); /* Standard syntax */
+}
+
 // Forms
 
 label {
@@ -10,9 +19,6 @@ body {
   letter-spacing: 1px;
 }
 
-p {
-
-}
 // Pages
 
 .page {
@@ -84,12 +90,7 @@ html, body {
 }
 
 body {
-  background: radial-gradient(
-    at -8% -8%,
-    $gradientWhite 1%,
-    $gradientPurple 30%,
-    $gradientBlue 85%
-    );
+  @include background-gradient;
   background-attachment: fixed;
 }
 
@@ -143,8 +144,8 @@ body {
   }
 }
 
-@media (min-width: $grid-float-breakpoint) {
+@media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-min){
   #nav-main ul {
-    @extend .navbar-right;
+    float: right;
   }
 }
