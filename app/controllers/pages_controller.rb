@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update]
 
-  def home
-    @page = Page.find_by(title: 'Home')
+  def samdhya
+    @page = Page.find_by(title: 'Samdhya')
+    render 'show'
   end
 
   def index

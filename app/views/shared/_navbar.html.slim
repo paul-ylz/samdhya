@@ -1,14 +1,14 @@
-nav.samdhya-nav role='navigation'
-  .container-fluid
+.nav-wrap
+  nav.samdhya-nav role='navigation'
     .nav-mobile-display
       button.navbar-toggle data-target='#nav-main' data-toggle='collapse' type='button'
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href='/' Samdhya
+      a.navbar-brand href="/" Ceridwen Wolf, ISIS Practitioner
     #nav-main
       ul
-        - Page.where(nav: true).each do |page|
+        - pages = Page.where(nav: true).order(:created_at).each
+        - for page in pages
           li= link_to page.title, page
-        end

@@ -1,62 +1,79 @@
-// Custom Variables
-$screen-md-min: 992px;
+// Forms
 
-// Colors
-
-$gradientStart: rgba(250, 241, 226, 0.6);
-$gradientMid: rgba(104, 89, 111, 0.8);
-$gradientEnd: rgba(28, 45, 75, 0.9);
-$samdhyaWhite: rgb(242, 236, 217);
-$samdhyaPurple: rgb(99, 72, 122);
-
-// Media queries
-
-@media (min-width: $screen-md-min) {
-  body {
-    background: radial-gradient(
-      at top left,
-      $gradientStart 7%,
-      $gradientMid 40%,
-      $gradientEnd 85%
-      );
-  }
-  .page-title {
-    position: fixed;
-    left: 30px;
-    bottom: 20px;
-  }
+label {
+  font-weight: inherit;
 }
 
-@media (max-width: $screen-md-min) {
-  body {
-    background: radial-gradient(
-      at top left,
-      $gradientMid 40%,
-      $gradientEnd 85%
-      );
-  }
+// Typography
+body {
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+p {
+
 }
 // Pages
 
 .page {
-  @extend .row;
-  .sidebar {
-  @extend .col-md-4;
-}
-  .content {
-    @extend .col-md-8;
-    @extend .col-md-offset-4;
-  }
-  .page-title {
-    color: $samdhyaWhite;
-  }
+  @extend .col-xs-12;
 }
 
+// Side
 
+.side-inner {
+  position: fixed;
+  top: 57px;
+}
+
+.logo, .brand, .name-credential {
+  img {
+    @extend .img-responsive;
+  }
+  @extend .text-center;
+  position: absolute;
+}
+
+.name-credential {
+  width: 125px;
+  top: 16px;
+  left: 97px;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.credential {
+  font-size: 12px;
+}
+
+.brand {
+  top: 335px;
+  left: 51px;
+}
 // Layout
 
-.content {
+.wrapper {
   @extend .container-fluid;
+}
+
+.content, .main-nav, .main-content {
+  @extend .row;
+}
+
+.side {
+  @extend .col-md-offset-1;
+  @extend .col-md-3;
+  @extend .hidden-xs;
+  @extend .hidden-sm;
+}
+
+.main {
+  @extend .col-xs-offset-1;
+  @extend .col-xs-11;
+  @extend .col-md-offset-1;
+  @extend .col-md-6;
 }
 
 // Body styles
@@ -67,14 +84,24 @@ html, body {
 }
 
 body {
+  background: radial-gradient(
+    at -8% -8%,
+    $gradientWhite 1%,
+    $gradientPurple 30%,
+    $gradientBlue 85%
+    );
   background-attachment: fixed;
 }
 
 // Navigation
+.nav-wrap {
+  @extend .col-xs-12;
+}
 
 .samdhya-nav {
   @extend .nav;
   @extend .navbar-default;
+  background: none;
 }
 
 .nav-mobile-display {
@@ -84,8 +111,40 @@ body {
 #nav-main {
   @extend .collapse;
   @extend .navbar-collapse;
+  margin-top: 10px;
+
   ul {
     @extend .nav;
     @extend .navbar-nav;
+
+    li a {
+      border-radius: $border-radius-base;
+    }
+  }
+}
+
+.navbar-brand {
+  @extend .hidden-md;
+  @extend .hidden-lg;
+  font-size: 12px;
+  background-image: url('logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: 45px;
+  padding-top: 23px;
+}
+
+// Media Queries
+
+@media (min-width: $screen-md-min) {
+  #nav-main ul {
+    position: relative;
+    left: -15px;
+  }
+}
+
+@media (min-width: $grid-float-breakpoint) {
+  #nav-main ul {
+    @extend .navbar-right;
   }
 }
