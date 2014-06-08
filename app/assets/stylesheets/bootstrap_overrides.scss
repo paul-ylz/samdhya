@@ -15,7 +15,7 @@ label {
 
 // Typography
 body {
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 1px;
 }
 
@@ -128,7 +128,7 @@ body {
   @extend .hidden-md;
   @extend .hidden-lg;
   font-size: 12px;
-  background-image: url('logo.png');
+  background-image: image-url('logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   text-indent: 45px;
@@ -138,6 +138,9 @@ body {
 // Media Queries
 
 @media (min-width: $screen-md-min) {
+  body {
+    font-weight: 100;
+  }
   #nav-main ul {
     position: relative;
     left: -15px;
