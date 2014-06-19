@@ -1,14 +1,6 @@
-.nav-wrap
-  nav.samdhya-nav role='navigation'
-    .nav-mobile-display
-      button.navbar-toggle data-target='#nav-main' data-toggle='collapse' type='button'
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand href="/" Samdhya
-    #nav-main
-      ul
-        - pages = Page.where(nav: true).order(:created_at).each
-        - for page in pages
-          li= link_to page.title, page
+nav.nav role='navigation'
+  ul.nav.nav-pills
+    - nav_order = %w(Samdhya Ceri Stars Flowers Food)
+    - pages = nav_order.map { |title| Page.find_by(title: title) }
+    - for page in pages
+      li= link_to page.title, page if page

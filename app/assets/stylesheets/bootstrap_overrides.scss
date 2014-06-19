@@ -1,144 +1,30 @@
-// Forms
-
-label {
-  font-weight: inherit;
-}
-
 // Typography
-body {
-  font-weight: 200;
-  letter-spacing: 1px;
-}
-
-// Pages
-
-.page {
-  @extend .col-xs-12;
-}
-
-// Side
-
-.side-inner {
-  position: fixed;
-  top: 57px;
-}
-
-.logo, .brand, .name-credential {
-  img {
-    @extend .img-responsive;
-  }
-  @extend .text-center;
-  position: absolute;
-}
-
-.name-credential {
-  width: 125px;
-  top: 16px;
-  left: 97px;
-}
-
-.name {
-  font-size: 14px;
-}
-
-.credential {
-  font-size: 12px;
+nav li a {
+  font-size: 13px;
 }
 
 .brand {
-  top: 335px;
-  left: 51px;
-}
-// Layout
-
-.wrapper {
-  @extend .container-fluid;
+  font-size: 3em;
 }
 
-.content, .main-nav, .main-content {
+// Navigation and brand
+.header {
   @extend .row;
+  margin-top: 45px;
 }
 
-.side {
-  @extend .col-md-offset-1;
-  @extend .col-md-3;
-  @extend .hidden-xs;
-  @extend .hidden-sm;
-}
-
-.main {
-  @extend .col-xs-12;
-  @extend .col-md-offset-1;
-  @extend .col-md-6;
-}
-
-// Body styles
-
-html, body {
+.brand, .nav {
   margin: 0;
-  height: 100%;
 }
 
+.brand {
+  position: relative;
+  bottom: 20px;
+}
+
+// Background
 body {
-  @include background-image(radial-gradient(at top left, $gradientWhite -30%, $gradientPurple 30%, $gradientBlue 90%));
-  background-attachment: fixed;
-}
-
-// Navigation
-.nav-wrap {
-  @extend .col-xs-12;
-}
-
-.samdhya-nav {
-  @extend .nav;
-  @extend .navbar-default;
-  background: none;
-}
-
-.nav-mobile-display {
-  @extend .navbar-header;
-}
-
-#nav-main {
-  @extend .collapse;
-  @extend .navbar-collapse;
-  // margin-top: 10px;
-
-  ul {
-    @extend .nav;
-    @extend .navbar-nav;
-
-    li a {
-      border-radius: $border-radius-base;
-    }
-  }
-}
-
-.navbar-brand {
-  @extend .hidden-md;
-  @extend .hidden-lg;
-  font-weight: 100;
-}
-
-// Media Queries
-@media (max-width: $screen-md-min) {
-  body {
-    @include background-image(radial-gradient(at top left, $gradientPurple 30%, $gradientBlue 90%));
-  }
-}
-
-@media (min-width: $screen-md-min) {
-  body {
-    font-weight: 100;
-  }
-  #nav-main ul {
-    position: relative;
-    left: -15px;
-  }
-}
-
-@media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-min){
-  #nav-main ul {
-    float: right;
-  }
+  @include background(
+    linear-gradient(left, darkmagenta -100%, white 14%, white 86%, darkmagenta 200%)
+    );
 }
