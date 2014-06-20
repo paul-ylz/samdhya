@@ -6,7 +6,7 @@ namespace :generate do
   task nav_pages: :environment do
     puts 'Generating navigation pages'
     Page.destroy_all
-    titles = %w(Samdhya Ceri Stars Flowers Food)
+    titles  = %w(Samdhya Ceri Stars Flowers Food)
     content = ''
     titles.each do |title|
       10.times { content += ('<p>' + Lorem.paragraph + '</p>') }

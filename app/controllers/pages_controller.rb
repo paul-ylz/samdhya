@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update]
 
   def samdhya
-    @page = Page.find_by(title: 'Samdhya')
+    @page = Page.find_by(slug: 'samdhya')
     render 'show'
   end
 
@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(permitted_params)
     if @page.save
-      redirect_to @page
+      redirect_to show_page_url @page
     else
       render 'new'
     end
@@ -43,6 +43,6 @@ class PagesController < ApplicationController
   end
 
   def set_page
-    @page = Page.find(params[:id])
+    @page = Page.find_by(slug: params[:id])
   end
 end
