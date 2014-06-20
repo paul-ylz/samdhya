@@ -26,5 +26,6 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'rails_12factor', group: :production

@@ -3,4 +3,4 @@ nav.nav role='navigation'
     - nav_order = %w(Samdhya Ceri Stars Flowers Food)
     - pages = nav_order.map { |title| Page.find_by(title: title) }
     - for page in pages
-      li= link_to page.title, page if page
+      li= link_to page.title, show_page_path(page) if page

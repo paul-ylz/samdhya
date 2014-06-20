@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+  http_basic_authenticate_with name:     ENV['ADMIN_EMAIL'],
+                               password: ENV['ADMIN_PASSWORD'],
+                               except:   [:samdhya, :show]
+
   before_action :set_page, only: [:show, :edit, :update]
 
   def samdhya
@@ -6,10 +10,10 @@ class PagesController < ApplicationController
     render 'show'
   end
 
-  def index
+  def show
   end
 
-  def show
+  def index
   end
 
   def new
@@ -30,7 +34,7 @@ class PagesController < ApplicationController
 
   def update
     if @page.update_attributes(permitted_params)
-      redirect_to @page
+      redirect_to show_page_url @page
     else
       render 'edit'
     end
